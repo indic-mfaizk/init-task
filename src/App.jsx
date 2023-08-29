@@ -1,8 +1,8 @@
 import React from "react";
-import HomeScreen from "./screens/HomeScreen";
+import Nav from "../Nav";
 
 const App = () => {
-  return <HomeScreen />;
+  return <Nav />;
 };
 
 export default App;
