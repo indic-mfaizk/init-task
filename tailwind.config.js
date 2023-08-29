@@ -8,9 +8,9 @@ export default {
         bebas_neue: "Bebas Neue, sans-serif",
       },
       backgroundImage: {
-        "hero-bg": 'url("./src/assets/hero-bg.svg")',
-        "bottom-bg": 'url("./src/assets/bottom-card.svg")',
-        "list-bg": 'url("./src/assets/list-bg.svg")',
+        "hero-bg": 'url("../src/assets/hero-bg.svg")',
+        "bottom-bg": 'url("../src/assets/bottom-card.svg")',
+        "list-bg": 'url("../src/assets/list-bg.svg")',
       },
     },
   },
