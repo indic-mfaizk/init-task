@@ -15,10 +15,41 @@ import prize from "../assets/prize.svg";
 import telegram from "../assets/telegram.svg";
 import twitter from "../assets/twitter.svg";
 import listMedal1 from "../assets/list-medal1.svg";
+import listMedal2 from "../assets/list-medal2.svg";
+import listMedal3 from "../assets/list-medal3.svg";
+import listMedal4 from "../assets/list-medal4.svg";
+import listMedal5 from "../assets/list-medal5.svg";
 const HomeScreen = () => {
+  const listImageData = [
+    {
+      name: "UMAIR",
+      img: listMedal1,
+      val: "4.89",
+    },
+    {
+      name: "ARVIND",
+      img: listMedal2,
+      val: "1.89",
+    },
+    {
+      name: "FAIZAN",
+      img: listMedal3,
+      val: "3.89",
+    },
+    {
+      name: "SHUBHAM",
+      img: listMedal4,
+      val: "1.89",
+    },
+    {
+      name: "SWATI",
+      img: listMedal5,
+      val: "0.89",
+    },
+  ];
   return (
     <div>
-      <div className="flex min-w-full  bg-hero-bg items-center justify-center flex-col text-white container bg-no-repeat">
+      <div className="flex min-w-full bg-cover bg-hero-bg items-center justify-center flex-col text-white container bg-no-repeat">
         <div className="flex items-center justify-center gap-3 mb-8 mt-14 ">
           <img src={heroLogo} alt="" className="w-8 sm:w-14" />
           <h4 className="font-roboto_condensed text-white text-2xl sm:text-3xl font-bold">
@@ -230,30 +261,30 @@ const HomeScreen = () => {
       {/* main-container-4-end-here */}
       {/* main-list-container-5-start-here */}
       <div className="bg-[#1d1f23] min-w-full h-96 flex items-start justify-center">
-        <table className=" w-80  lg:w-[1015px]  table-auto text-end border-separate border-spacing-y-2 text-white bg-[#26272b] p-3 shadow-md rounded-md">
+        <table className=" w-80  lg:w-[1015px]  table-fixed text-center border-separate border-spacing-y-2 text-white bg-[#26272b] p-3 shadow-md rounded-md">
           <tr className="">
             <th> </th>
             <th className="font-roboto_condensed">PLAYER</th>
-            <th className="relative right-8 font-roboto_condensed">PROFIT</th>
+            <th className="relative right-8 font-roboto_condensed float-right">
+              PROFIT
+            </th>
           </tr>
-          {Array(5)
-            .fill(1)
-            .map((e, i) => (
-              <tr className="bg-list-bg relative h-12 p-9" key={i}>
-                <td>
-                  <img
-                    src={listMedal1}
-                    alt=""
-                    className="w-12 absolute top-1 left-4"
-                  />
-                </td>
-                <td className="relative  text-[#1BD8F2]">UMAIR</td>
-                <td className="relative right-8 top-2 flex items-center justify-end">
-                  <img src={heroTron} alt="" className="w-5" />
-                  <h4>4.68</h4>
-                </td>
-              </tr>
-            ))}
+          {listImageData.map((e, i) => (
+            <tr className="bg-list-bg relative h-12 p-9" key={i}>
+              <td className="">
+                <img
+                  src={e.img}
+                  alt=""
+                  className="w-12 absolute top-1 left-4"
+                />
+              </td>
+              <td className="relative  text-[#1BD8F2]  w-28">{e.name}</td>
+              <td className="relative right-8 top-2 flex items-center justify-end">
+                <img src={heroTron} alt="" className="w-5" />
+                <h4>{e.val}</h4>
+              </td>
+            </tr>
+          ))}
         </table>
       </div>
       {/* main-list-container-5-end-here */}
