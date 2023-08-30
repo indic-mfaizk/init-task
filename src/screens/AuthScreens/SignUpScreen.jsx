@@ -1,17 +1,25 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { MdEmail } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { BsArrowLeft } from "react-icons/bs";
-const LoginScreen = () => {
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { AuthContext } from "../../context/authModalContext";
+import { AuthModalConst } from "../../const/AuthModalConst";
+import CrossButton from "../AuthScreens/component/CrossButton";
+
+const SignUpScreen = () => {
   const [isError, setIsError] = useState(false);
-  const [isInitialPage, setIsInitialPage] = useState(false);
+  const [isInitialPage, setIsInitialPage] = useState(true);
+  const [tAndC, setTAndC] = useState(false);
+  const [isObsecurePass, setIsObsecurePass] = useState(false);
+  const [isObsecureCnfPass, setIsObsecureCnfPass] = useState(false);
+  const { curentAuthScreen, setCurentAuthScreen } = useContext(AuthContext);
+
   return (
-    <div className="min-w-full min-h-screen z-20 absolute bg-blue-600 flex items-center justify-center ">
-      <div className="w-[450px]  bg-[#26272b] text-white flex flex-col items-center justify-start relative">
+    <div className="min-w-full min-h-screen z-20 absolute backdrop-blur-md flex items-center justify-center ">
+      <div className="w-full min-h-screen sm:min-h-fit sm:w-[450px]  bg-[#26272b] text-white flex flex-col items-center justify-start relative">
         {/* cross-button */}
-        <button className="absolute right-3 top-3">
-          <RxCross2 size={25} />
-        </button>
+        <CrossButton />
         {/* cross-button */}
         <h1 className="font-roboto_condensed my-4 mt-8 font-bold ">
           CREATE AN ACCOUNT
@@ -124,16 +132,30 @@ const LoginScreen = () => {
                     Password
                   </h5>{" "}
                   <div
-                    className={`flex items-center justify-between  gap-0 bg-[#2f3034] w-[100%] h-11 rounded ${
+                    className={`flex items-center justify-between  gap-0 bg-[#2f3034] w-[100%] h-11 rounded relative ${
                       isError ? "border border-red-600" : ""
                     }`}
                   >
                     <MdEmail size={20} className="w-8 h-7 mx-2" />
                     <input
-                      type="text"
+                      type={!isObsecurePass ? "password" : "text"}
                       className=" rounded-sm bg-[#1d1f23] text-sm w-[88%] h-10 pl-2 mx-1"
                       placeholder="Please enter password"
                     />
+                    <button
+                      type="button"
+                      className="absolute right-4"
+                      onClick={(e) => {
+                        setIsObsecurePass((e) => !e);
+                        console.log("hello");
+                      }}
+                    >
+                      {isObsecurePass ? (
+                        <AiFillEye size={18} />
+                      ) : (
+                        <AiFillEyeInvisible size={18} />
+                      )}
+                    </button>
                   </div>
                 </div>
               </label>
@@ -154,16 +176,30 @@ const LoginScreen = () => {
                     Confirm Password
                   </h5>
                   <div
-                    className={`flex items-center justify-between  gap-0 bg-[#2f3034] w-[100%] h-11 rounded ${
+                    className={`flex items-center justify-between  gap-0 bg-[#2f3034] w-[100%] h-11 rounded relative ${
                       isError ? "border border-red-600" : ""
                     }`}
                   >
                     <MdEmail size={20} className="w-8 h-7 mx-2" />
                     <input
-                      type="text"
+                      type={!isObsecureCnfPass ? "password" : "text"}
                       className=" rounded-sm bg-[#1d1f23] text-sm w-[88%] h-10 pl-2 mx-1"
-                      placeholder="Please enter confirm password"
+                      placeholder="Please enter password"
                     />
+                    <button
+                      type="button"
+                      className="absolute right-4"
+                      onClick={(e) => {
+                        setIsObsecureCnfPass((e) => !e);
+                        console.log("hello");
+                      }}
+                    >
+                      {isObsecureCnfPass ? (
+                        <AiFillEye size={18} />
+                      ) : (
+                        <AiFillEyeInvisible size={18} />
+                      )}
+                    </button>
                   </div>
                 </div>
               </label>
@@ -184,71 +220,98 @@ const LoginScreen = () => {
         ) : (
           // eula-start
           <>
-            <div className="flex flex-row items-center justify-center  w-[75%] relative mb-2">
-              <button className="absolute left-0">
-                <BsArrowLeft className="" />
-              </button>
-              <h4 className="text-xs ">
-                Read and accept the terms and conditions
-              </h4>
-            </div>
-            <div className="h-[280px] bg-[#1d1f23] w-[75%] overflow-x-scroll text-xs font-roboto_condensed p-4 font-extralight">
-              Lorem ipsum is a placeholder text commonly used to demonstrate the
-              visual form of a document or a typeface without relying on
-              meaningful content. Lorem ipsum is a placeholder text commonly
-              used to demonstrate the visual form of a document or a typeface
-              without relying on meaningful content. Lorem ipsum is a
-              placeholder text commonly used to demonstrate the visual form of a
-              document or a typeface without relying on meaningful content.
-              Lorem ipsum is a placeholder text commonly used to demonstrate the
-              visual form of a document or a typeface without relying on
-              meaningful content. Lorem ipsum is a placeholder text commonly
-              used to demonstrate the visual form of a document or a typeface
-              without relying on meaningful content. Lorem ipsum is a
-              placeholder text commonly used to demonstrate the visual form of a
-              document Lorem ipsum is a placeholder text commonly used to
-              demonstrate the visual form of a document or a typeface without
-              relying on meaningful content. Lorem ipsum is a placeholder text
-              commonly used to demonstrate the visual form of a document Lorem
-              ipsum is a placeholder text commonly used to demonstrate the
-              visual form of a document or a typeface without relying on
-              meaningful content. Lorem ipsum is a placeholder text commonly
-              used to demonstrate the visual form of a document
-            </div>
-            <div className="w-[75%] flex flex-col gap-2 mt-3">
-              <label className="flex items-center justify-start gap-2 ">
-                <input
-                  type="checkbox"
-                  name=""
-                  id=""
-                  className="accent-[#eb7d2d] bg-[#26272b] form-checkbox focus:outline-none focus-visible:outline-none focus:ring-offset-0"
-                />
-                <h4 className="text-xs">I accept that I am 18+</h4>
-              </label>
-              <label className="flex items-center justify-start gap-2 ">
-                <input
-                  type="checkbox"
-                  name=""
-                  id=""
-                  className="accent-[#eb7d2d] bg-[#26272b] form-checkbox focus:outline-none focus-visible:outline-none focus:ring-offset-0"
-                />
-                <h4 className="text-xs">
-                  I have read and agree to the terms and conditions.
-                </h4>
-              </label>
-            </div>
-            <button
-              className="bg-[#eb7d2d] w-[75%] h-10 rounded my-4"
-              type="submit"
+            <form
+              className="flex justify-center items-center flex-col"
+              onSubmit={(e) => {
+                e.preventDefault();
+                setTAndC((d) => !d);
+              }}
             >
-              PLAY NOW
-            </button>
+              <div className="flex flex-row items-center justify-center  w-[75%] relative mb-2">
+                <button
+                  className="absolute left-0"
+                  onClick={() => setIsInitialPage(true)}
+                >
+                  <BsArrowLeft className="" />
+                </button>
+                <h4 className="text-xs ">
+                  Read and accept the terms and conditions
+                </h4>
+              </div>
+              <div
+                className={`${
+                  tAndC && "border border-red-600"
+                } h-[280px] bg-[#1d1f23] w-[75%] overflow-x-scroll text-xs font-roboto_condensed p-4 font-extralight`}
+              >
+                Lorem ipsum is a placeholder text commonly used to demonstrate
+                the visual form of a document or a typeface without relying on
+                meaningful content. Lorem ipsum is a placeholder text commonly
+                used to demonstrate the visual form of a document or a typeface
+                without relying on meaningful content. Lorem ipsum is a
+                placeholder text commonly used to demonstrate the visual form of
+                a document or a typeface without relying on meaningful content.
+                Lorem ipsum is a placeholder text commonly used to demonstrate
+                the visual form of a document or a typeface without relying on
+                meaningful content. Lorem ipsum is a placeholder text commonly
+                used to demonstrate the visual form of a document or a typeface
+                without relying on meaningful content. Lorem ipsum is a
+                placeholder text commonly used to demonstrate the visual form of
+                a document Lorem ipsum is a placeholder text commonly used to
+                demonstrate the visual form of a document or a typeface without
+                relying on meaningful content. Lorem ipsum is a placeholder text
+                commonly used to demonstrate the visual form of a document Lorem
+                ipsum is a placeholder text commonly used to demonstrate the
+                visual form of a document or a typeface without relying on
+                meaningful content. Lorem ipsum is a placeholder text commonly
+                used to demonstrate the visual form of a document
+              </div>
+              <div className="w-[75%] flex flex-col gap-2 mt-3">
+                <label className="flex items-center justify-start gap-2 ">
+                  <input
+                    type="checkbox"
+                    name=""
+                    id=""
+                    className="accent-[#eb7d2d] bg-[#26272b] form-checkbox focus:outline-none focus-visible:outline-none focus:ring-offset-0"
+                  />
+                  <h4 className="text-xs">I accept that I am 18+</h4>
+                </label>
+                <label className="flex items-center justify-start gap-2 ">
+                  <input
+                    type="checkbox"
+                    name=""
+                    id=""
+                    className="accent-[#eb7d2d] bg-[#26272b] form-checkbox focus:outline-none focus-visible:outline-none focus:ring-offset-0"
+                  />
+                  <h4 className="text-xs">
+                    I have read and agree to the terms and conditions.
+                  </h4>
+                </label>
+                {tAndC && (
+                  <h2 className="text-red-600 text-xs">
+                    Please Read the terms and conditions in full and scroll to
+                    the end to accept
+                  </h2>
+                )}
+              </div>
+              <button
+                className="bg-[#eb7d2d] w-[75%] h-10 rounded my-4"
+                type="submit"
+              >
+                PLAY NOW
+              </button>
+            </form>
           </>
           // eula-end
         )}
         <h3 className="text-xs my-3">
           Already have an account?{" "}
-          <span className="text-[#EB7D2D]"> Log In</span>
+          <span
+            className="text-[#EB7D2D] cursor-pointer"
+            onClick={() => setCurentAuthScreen(AuthModalConst.SIGNIN)}
+          >
+            {" "}
+            Log In
+          </span>
         </h3>
         <div className="flex gap-4 my-4">
           <div
@@ -269,4 +332,4 @@ const LoginScreen = () => {
   );
 };
 
-export default LoginScreen;
+export default SignUpScreen;
