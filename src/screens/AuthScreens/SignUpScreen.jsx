@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react";
-import { MdEmail } from "react-icons/md";
+import { MdEmail, MdPassword } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
-import { BsArrowLeft } from "react-icons/bs";
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { BsArrowLeft, BsBriefcaseFill } from "react-icons/bs";
+import { AiFillEye, AiFillEyeInvisible, AiFillLock } from "react-icons/ai";
 import { AuthContext } from "../../context/authModalContext";
 import { AuthModalConst } from "../../const/AuthModalConst";
 import CrossButton from "../AuthScreens/component/CrossButton";
+import { BiSolidUser } from "react-icons/bi";
 
 const SignUpScreen = () => {
   const [isError, setIsError] = useState(false);
@@ -46,7 +47,7 @@ const SignUpScreen = () => {
                       isError ? "border border-red-600" : ""
                     }`}
                   >
-                    <MdEmail size={20} className="w-8 h-7 mx-2" />
+                    <MdEmail size={20} className="w-8 h-7 mx-2 p-0.5" />
                     <input
                       type="text"
                       className=" rounded-sm bg-[#1d1f23] text-sm w-[88%] h-10 pl-2 mx-1 !outline-none"
@@ -76,7 +77,7 @@ const SignUpScreen = () => {
                       isError ? "border border-red-600" : ""
                     }`}
                   >
-                    <MdEmail size={20} className="w-8 h-7 mx-2" />
+                    <BiSolidUser size={20} className="w-8 h-7 mx-2  p-0.5" />
                     <input
                       type="text"
                       className=" rounded-sm bg-[#1d1f23] text-sm w-[88%] h-10 pl-2 mx-1"
@@ -98,7 +99,7 @@ const SignUpScreen = () => {
               w-[350px]  
             "
                 >
-                  <h5 className="font-roboto_condensed text-xs mb-1">
+                  <h5 className="font-roboto_condensed text-xs mb-1 ">
                     Profession
                   </h5>
                   <div
@@ -106,7 +107,10 @@ const SignUpScreen = () => {
                       isError ? "border border-red-600" : ""
                     }`}
                   >
-                    <MdEmail size={20} className="w-8 h-7 mx-2" />
+                    <BsBriefcaseFill
+                      size={20}
+                      className="w-8 h-7 mx-2  p-0.5"
+                    />
                     <input
                       type="text"
                       className=" rounded-sm bg-[#1d1f23] text-sm w-[88%] h-10 pl-2 mx-1"
@@ -136,7 +140,7 @@ const SignUpScreen = () => {
                       isError ? "border border-red-600" : ""
                     }`}
                   >
-                    <MdEmail size={20} className="w-8 h-7 mx-2" />
+                    <AiFillLock size={20} className="w-8 h-7 mx-2  p-0.5" />
                     <input
                       type={!isObsecurePass ? "password" : "text"}
                       className=" rounded-sm bg-[#1d1f23] text-sm w-[88%] h-10 pl-2 mx-1"
@@ -180,7 +184,7 @@ const SignUpScreen = () => {
                       isError ? "border border-red-600" : ""
                     }`}
                   >
-                    <MdEmail size={20} className="w-8 h-7 mx-2" />
+                    <AiFillLock size={20} className="w-8 h-7 mx-2  p-0.5" />
                     <input
                       type={!isObsecureCnfPass ? "password" : "text"}
                       className=" rounded-sm bg-[#1d1f23] text-sm w-[88%] h-10 pl-2 mx-1"

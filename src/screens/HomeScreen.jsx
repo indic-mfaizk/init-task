@@ -19,7 +19,9 @@ import listMedal2 from "../assets/list-medal2.svg";
 import listMedal3 from "../assets/list-medal3.svg";
 import listMedal4 from "../assets/list-medal4.svg";
 import listMedal5 from "../assets/list-medal5.svg";
+import { useNavigate, useNavigation } from "react-router-dom";
 const HomeScreen = () => {
+  const nav = useNavigate();
   const listImageData = [
     {
       name: "UMAIR",
@@ -60,7 +62,10 @@ const HomeScreen = () => {
         <p className="font-roboto_condensed text-sm sm:text-lg mt-1">
           TRX GAMBLING SINCE 2014
         </p>
-        <button className="flex min-w-[240px] sm:min-w-[296px] py-1 bg-[#EB7D2D] justify-center items-center rounded-md font-bebas_neue text-xl sm:text-2xl mt-6">
+        <button
+          className="flex min-w-[240px] sm:min-w-[296px] py-1 bg-[#EB7D2D] justify-center items-center rounded-md font-bebas_neue text-xl sm:text-2xl mt-6"
+          onClick={() => nav("/manual")}
+        >
           PLAY NOW
         </button>
         {/* card-container-start-here */}

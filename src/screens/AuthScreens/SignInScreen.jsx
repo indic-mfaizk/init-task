@@ -56,7 +56,7 @@ const SignInScreen = () => {
                           isError ? "border border-red-600" : ""
                         }`}
                       >
-                        <MdEmail size={20} className="w-8 h-7 mx-2" />
+                        <MdEmail size={20} className="w-8 h-7 mx-2 p-0.5" />
                         <input
                           type="text"
                           className=" rounded-sm bg-[#1d1f23] text-xs w-[88%] h-10 pl-2 mx-1 !outline-none"
@@ -87,7 +87,7 @@ const SignInScreen = () => {
                           isError ? "border border-red-600" : ""
                         }`}
                       >
-                        <MdEmail size={20} className="w-8 h-7 mx-2" />
+                        <AiFillLock size={20} className="w-8 h-7 mx-2 p-0.5" />
                         <input
                           type={!isObsecurePass ? "password" : "text"}
                           className=" rounded-sm bg-[#1d1f23] text-xs w-[88%] h-10 pl-2 mx-1"
