@@ -6,7 +6,8 @@ import { AiFillEye, AiFillEyeInvisible, AiFillLock } from "react-icons/ai";
 import { AuthContext } from "../../context/authModalContext";
 import { AuthModalConst } from "../../const/AuthModalConst";
 import CrossButton from "../AuthScreens/component/CrossButton";
-
+import { useFormik } from "formik";
+import * as Yup from "yup";
 const whichScreen = {
   SignIn: "SignIn",
   PassCode: "PassCode",
@@ -21,6 +22,26 @@ const SignInScreen = () => {
   const [forgetEmailError, setForgetEmailError] = useState(false);
   const [forgetEmailSuccess, setForgetEmailSuccess] = useState(false);
   const [isCodeRequestPage, setIsCodeRequestPage] = useState(false);
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .email("Please enter a valid email address")
+        .required(),
+
+      password: Yup.string().required(),
+    }),
+    onSubmit: (val) => {
+      console.log(val);
+      setPage(whichScreen.PassCode);
+      // setIsInitialPage(false);
+    },
+  });
+
   return (
     <>
       <div className="min-w-full min-h-screen z-20 absolute backdrop-blur-md flex items-center justify-center ">
@@ -36,10 +57,7 @@ const SignInScreen = () => {
               <>
                 <form
                   className="flex flex-col gap-2"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setIsError((e) => !e);
-                  }}
+                  onSubmit={formik.handleSubmit}
                 >
                   {/* input-start */}
                   <label className="flex flex-colitems-center justify-center">
@@ -61,15 +79,20 @@ const SignInScreen = () => {
                           type="text"
                           className=" rounded-sm bg-[#1d1f23] text-xs w-[88%] h-10 pl-2 mx-1 !outline-none"
                           placeholder="Please enter email/phone number/username"
+                          name="email"
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          value={formik.values.email}
                         />
                       </div>
                     </div>
                   </label>
-                  {isError && (
+                  {formik.touched.email && formik.errors.email ? (
                     <h2 className="text-red-600 text-xs">
-                      Please enter a valid email address
+                      {formik.errors.email}{" "}
                     </h2>
-                  )}
+                  ) : null}
+
                   {/* input-end */}
 
                   {/* input-start */}
@@ -92,6 +115,10 @@ const SignInScreen = () => {
                           type={!isObsecurePass ? "password" : "text"}
                           className=" rounded-sm bg-[#1d1f23] text-xs w-[88%] h-10 pl-2 mx-1"
                           placeholder="Please enter password"
+                          name="password"
+                          onChange={formik.handleChange}
+                          onBlur={formik.handleBlur}
+                          value={formik.values.password}
                         />
                         <button
                           type="button"
@@ -110,11 +137,11 @@ const SignInScreen = () => {
                       </div>
                     </div>
                   </label>
-                  {isError && (
+                  {formik.touched.password && formik.errors.password ? (
                     <h2 className="text-red-600 text-xs">
-                      Your Password must be at least 8 characters long
+                      {formik.errors.password}{" "}
                     </h2>
-                  )}
+                  ) : null}
                   {/* input-end */}
                   <button
                     type="button"

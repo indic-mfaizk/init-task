@@ -7,6 +7,8 @@ import { AuthContext } from "../../context/authModalContext";
 import { AuthModalConst } from "../../const/AuthModalConst";
 import CrossButton from "../AuthScreens/component/CrossButton";
 import { BiSolidUser } from "react-icons/bi";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const SignUpScreen = () => {
   const [isError, setIsError] = useState(false);
@@ -15,6 +17,40 @@ const SignUpScreen = () => {
   const [isObsecurePass, setIsObsecurePass] = useState(false);
   const [isObsecureCnfPass, setIsObsecureCnfPass] = useState(false);
   const { curentAuthScreen, setCurentAuthScreen } = useContext(AuthContext);
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      username: "",
+      profession: "",
+      password: "",
+      cnfPassword: "",
+    },
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .email("Please enter a valid email address")
+        .required(),
+      username: Yup.string()
+        .min(4, "Your username must be at least 3 characters long")
+        .required(),
+      profession: Yup.string()
+        .min(6, "Your Profession must be at least 6 characters long")
+        .required(),
+      password: Yup.string()
+        .min(8, "Your Password must be at least 8 characters long")
+        .required(),
+      cnfPassword: Yup.string()
+        .oneOf(
+          [Yup.ref("password"), null],
+          "Confirm password must match with the password"
+        )
+        .required("Confirm password is required"),
+    }),
+    onSubmit: (val) => {
+      console.log(val);
+      setIsInitialPage(false);
+    },
+  });
 
   return (
     <div className="min-w-full min-h-screen z-20 absolute backdrop-blur-md flex items-center justify-center ">
@@ -29,10 +65,7 @@ const SignUpScreen = () => {
           <>
             <form
               className="flex flex-col gap-2"
-              onSubmit={(e) => {
-                e.preventDefault();
-                setIsError((e) => !e);
-              }}
+              onSubmit={formik.handleSubmit}
             >
               {/* input-start */}
               <label className="flex flex-colitems-center justify-center">
@@ -49,18 +82,21 @@ const SignUpScreen = () => {
                   >
                     <MdEmail size={20} className="w-8 h-7 mx-2 p-0.5" />
                     <input
-                      type="text"
+                      type="email"
                       className=" rounded-sm bg-[#1d1f23] text-sm w-[88%] h-10 pl-2 mx-1 !outline-none"
                       placeholder="Please enter email address"
+                      name="email"
+                      id="email"
+                      onChange={formik.handleChange}
+                      value={formik.values.email}
+                      onBlur={formik.handleBlur}
                     />
                   </div>
                 </div>
               </label>
-              {isError && (
-                <h2 className="text-red-600 text-xs">
-                  Please enter a valid email address
-                </h2>
-              )}
+              {formik.errors.email && formik.touched.email ? (
+                <h2 className="text-red-600 text-xs">{formik.errors.email}</h2>
+              ) : null}
               {/* input-end */}
               {/* input-start */}
               <label className="flex flex-colitems-center justify-center">
@@ -82,15 +118,19 @@ const SignUpScreen = () => {
                       type="text"
                       className=" rounded-sm bg-[#1d1f23] text-sm w-[88%] h-10 pl-2 mx-1"
                       placeholder="Please enter username"
+                      name="username"
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      value={formik.values.username}
                     />
                   </div>
                 </div>
               </label>
-              {isError && (
+              {formik.touched.username && formik.errors.username ? (
                 <h2 className="text-red-600 text-xs">
-                  Your username must be at least 3 characters long
+                  {formik.errors.username}
                 </h2>
-              )}
+              ) : null}
               {/* input-end */}
               {/* input-start */}
               <label className="flex flex-colitems-center justify-center">
@@ -112,15 +152,19 @@ const SignUpScreen = () => {
                       type="text"
                       className=" rounded-sm bg-[#1d1f23] text-sm w-[88%] h-10 pl-2 mx-1"
                       placeholder="Please enter your profession"
+                      name="profession"
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      value={formik.values.profession}
                     />
                   </div>
                 </div>
               </label>
-              {isError && (
+              {formik.touched.profession && formik.errors.profession ? (
                 <h2 className="text-red-600 text-xs">
-                  Your Profession must be at least 6 characters long
+                  {formik.errors.profession}
                 </h2>
-              )}
+              ) : null}
               {/* input-end */}
               {/* input-start */}
               <label className="flex flex-colitems-center justify-center">
@@ -142,6 +186,10 @@ const SignUpScreen = () => {
                       type={!isObsecurePass ? "password" : "text"}
                       className=" rounded-sm bg-[#1d1f23] text-sm w-[88%] h-10 pl-2 mx-1"
                       placeholder="Please enter password"
+                      name="password"
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      value={formik.values.password}
                     />
                     <button
                       type="button"
@@ -160,11 +208,11 @@ const SignUpScreen = () => {
                   </div>
                 </div>
               </label>
-              {isError && (
+              {formik.touched.password && formik.errors.password ? (
                 <h2 className="text-red-600 text-xs">
-                  Your Password must be at least 8 characters long
+                  {formik.errors.password}
                 </h2>
-              )}
+              ) : null}
               {/* input-end */}
               {/* input-start */}
               <label className="flex flex-colitems-center justify-center">
@@ -186,6 +234,10 @@ const SignUpScreen = () => {
                       type={!isObsecureCnfPass ? "password" : "text"}
                       className=" rounded-sm bg-[#1d1f23] text-sm w-[88%] h-10 pl-2 mx-1"
                       placeholder="Please enter password"
+                      name="cnfPassword"
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      value={formik.values.cnfPassword}
                     />
                     <button
                       type="button"
@@ -204,11 +256,11 @@ const SignUpScreen = () => {
                   </div>
                 </div>
               </label>
-              {isError && (
+              {formik.touched.cnfPassword && formik.errors.cnfPassword ? (
                 <h2 className="text-red-600 text-xs">
-                  Confirm password must match with the password
+                  {formik.errors.cnfPassword}
                 </h2>
-              )}
+              ) : null}
               {/* input-end */}
               <button
                 className="bg-[#eb7d2d] w-[350px] h-10 rounded my-4"
