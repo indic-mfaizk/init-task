@@ -107,10 +107,7 @@ const SignUpScreen = () => {
                       isError ? "border border-red-600" : ""
                     }`}
                   >
-                    <BsBriefcaseFill
-                      size={20}
-                      className="w-8 h-7 mx-2  p-0.5"
-                    />
+                    <BsBriefcaseFill size={15} className="w-8 h-7 mx-2 p-1" />
                     <input
                       type="text"
                       className=" rounded-sm bg-[#1d1f23] text-sm w-[88%] h-10 pl-2 mx-1"
