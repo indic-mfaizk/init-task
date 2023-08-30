@@ -151,9 +151,9 @@ const HomeScreen = () => {
       </div>
       {/* main-container-2-end-here */}
       {/* main-container-3-start-here */}
-      <div className="bg-[#1d1f23] flex flex-col justify-center items-center lg:flex-row pt-14 gap-14">
+      <div className="bg-[#1d1f23] flex flex-col justify-center items-center lg:flex-row pt-7 sm:pt-14 gap-14">
         {/* cont-1-start */}
-        <div className="bg-[#1d1f23] w-80 lg:w-1/2 flex flex-col items-end justify-end gap-3 lg:mt-36 ">
+        <div className="bg-[#1d1f23] w-80 lg:w-1/2 flex flex-col items-end justify-end gap-7 sm:gap-3 lg:mt-36 ">
           {/* card-1-start */}
           <div className="bg-[#27292d] h-[380px] lg:w-[480px] text-white flex  flex-col items-start justify-center px-5 gap-3">
             <img src={cont31Image} alt="" className="w-16 h-16" />
@@ -197,7 +197,7 @@ const HomeScreen = () => {
         </div>
         {/* cont-1-end */}
         {/* cont-2-start */}
-        <div className="bg-[#1d1f23] w-80 lg:w-1/2 flex flex-col gap-5 mb-20">
+        <div className="bg-[#1d1f23] w-80 lg:w-1/2 flex flex-col gap-7 sm:gap-5 sm:mb-20">
           {/* card-1-start */}
           <div className="bg-[#27292d] h-[380px] lg:w-[480px] text-white flex  flex-col items-start justify-center px-5 gap-3">
             <img src={heroLogo} alt="" className="w-16 h-16" />
