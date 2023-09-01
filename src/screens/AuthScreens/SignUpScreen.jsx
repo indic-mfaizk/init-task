@@ -53,8 +53,8 @@ const SignUpScreen = () => {
   });
 
   return (
-    <div className="min-w-full min-h-screen z-20 absolute backdrop-blur-md flex items-center justify-center ">
-      <div className="w-full min-h-screen sm:min-h-fit sm:w-[450px]  bg-[#26272b] text-white flex flex-col items-center justify-start relative">
+    <div className="min-w-full min-h-screen z-20  backdrop-blur-md flex items-center justify-center fixed top-0">
+      <div className="w-full min-h-screen sm:min-h-fit sm:w-[450px]  bg-[#26272b] text-white flex flex-col items-center justify-start relative ">
         {/* cross-button */}
         <CrossButton />
         {/* cross-button */}

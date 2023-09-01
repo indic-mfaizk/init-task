@@ -44,7 +44,7 @@ const SignInScreen = () => {
 
   return (
     <>
-      <div className="min-w-full min-h-screen z-20 absolute backdrop-blur-md flex items-center justify-center ">
+      <div className="min-w-full min-h-screen z-20 fixed top-0 backdrop-blur-md flex items-center justify-center ">
         {(page === whichScreen.PassCode || page == whichScreen.SignIn) && (
           <div className="sm:pb-9 w-full min-h-screen sm:min-h-fit sm:w-[450px]  bg-[#26272b] text-white flex flex-col items-center justify-start relative">
             {/* cross-button */}

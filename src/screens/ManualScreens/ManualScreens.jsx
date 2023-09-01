@@ -6,6 +6,7 @@ import SignInScreen from "../AuthScreens/SignInScreen";
 import { AuthContext } from "../../context/authModalContext";
 import ResetPasswordScreen from "../AuthScreens/ResetPasswordScreen";
 import { useParams } from "react-router-dom";
+import ManualMainScreen from "./ManualMainScreen";
 const ManualScreens = () => {
   // const [authScreenHandler, setAuthScreenHandler] = useState("");
   const { curentAuthScreen, setCurentAuthScreen } = useContext(AuthContext);
@@ -26,7 +27,7 @@ const ManualScreens = () => {
       {curentAuthScreen == AuthModalConst.RESETPASS && <ResetPasswordScreen />}
 
       {screenOption == "reset" && <ResetPasswordScreen />}
-      <img src={ManualImage} alt="" className="h-screen w-full" />
+      <ManualMainScreen />
     </>
   );
 };
