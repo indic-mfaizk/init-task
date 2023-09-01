@@ -305,7 +305,10 @@ const HomeScreen = () => {
           Our <span className="underline cursor-pointer">Help Docs</span> or our{" "}
           <span className="text-[#EB7D2D] ">BUSTATRX</span>
         </p>
-        <button className="flex min-w-[240px] sm:min-w-[296px] py-1 bg-[#EB7D2D] justify-center items-center rounded-md font-bebas_neue text-xl sm:text-2xl mt-6">
+        <button
+          className="flex min-w-[240px] sm:min-w-[296px] py-1 bg-[#EB7D2D] justify-center items-center rounded-md font-bebas_neue text-xl sm:text-2xl mt-6"
+          onClick={() => nav("/manual")}
+        >
           PLAY NOW
         </button>
       </div>
