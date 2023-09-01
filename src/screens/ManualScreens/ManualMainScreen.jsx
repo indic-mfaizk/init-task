@@ -54,11 +54,11 @@ const ManualMainScreen = () => {
     tension: 0.5,
     // linetension: 0.8,
     maintainAspectRatio: false,
-    elements: {
-      point: {
-        radius: 0,
-      },
-    },
+    // elements: {
+    //   point: {
+    //     radius: 0,
+    //   },
+    // },
     scales: {
       x: {
         grid: {
