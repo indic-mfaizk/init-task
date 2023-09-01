@@ -236,15 +236,17 @@ const ManualMainScreen = () => {
                               <h4 className="opacity-40">$0.00</h4>
                             </div>
                             <div className="flex flex-row items-center justify-between p-1 bg-[#2f3034] rounded-lg">
-                              <input
-                                type="text"
-                                className="border-none rounded h-9 w-[76%] lg:w-48 p-1 bg-[#1d1f23]"
-                              />
-                              <img
-                                src={heroTron}
-                                className="h-6 w-6 absolute right-28"
-                              />
-                              <div className="flex justify-center items-center bg-[#2f3034] flex-grow gap-3">
+                              <div className="bg-[#1d1f23] flex flex-row items-center justify-between rounded-r gap-0.5">
+                                <input
+                                  type="text"
+                                  className="border-none rounded h-9  lg:w-48 p-1 flex-grow bg-[#1d1f23]"
+                                ></input>
+                                <img
+                                  src={heroTron}
+                                  className="h-6 w-6 bg-[#1d1f23] "
+                                />
+                              </div>
+                              <div className="flex justify-center items-center bg-[#2f3034] flex-grow gap-2">
                                 <h5 className="text-sm">1/2</h5>
                                 <div className="h-5 w-0.5 bg-[#656565]"></div>
                                 <h5 className="text-sm">2x</h5>
@@ -257,14 +259,16 @@ const ManualMainScreen = () => {
                               <h4 className="opacity-40">Cashout At</h4>
                             </div>
                             <div className="flex flex-row items-center justify-between p-1 bg-[#2f3034] rounded-lg">
-                              <input
-                                type="text"
-                                className="border-none rounded h-9 w-[76%] lg:w-48 p-1 bg-[#1d1f23]"
-                              />
-                              <img
-                                src={heroTron}
-                                className="h-6 w-6 absolute right-28"
-                              />
+                              <div className="bg-[#1d1f23] flex flex-row items-center justify-between rounded-r gap-0.5">
+                                <input
+                                  type="text"
+                                  className="border-none rounded h-9  lg:w-48 p-1 flex-grow bg-[#1d1f23]"
+                                ></input>
+                                <img
+                                  src={heroTron}
+                                  className="h-6 w-6 bg-[#1d1f23] "
+                                />
+                              </div>
                               <div className="flex justify-center items-center bg-[#2f3034] flex-grow gap-3">
                                 <IoCaretUpSharp className="opacity-50" />
                                 <div className="h-5 w-0.5 bg-[#656565]"></div>
@@ -281,14 +285,16 @@ const ManualMainScreen = () => {
                               <h4 className="opacity-40">$0.00</h4>
                             </div>
                             <div className="flex flex-row items-center justify-between p-1 bg-[#2f3034] rounded-lg">
-                              <input
-                                type="text"
-                                className="border-none rounded h-9 flex-grow p-1 bg-[#1d1f23]"
-                              />
-                              <img
-                                src={heroTron}
-                                className="h-6 w-6 absolute right-3"
-                              />
+                              <div className="bg-[#1d1f23] flex flex-row flex-grow items-center justify-between rounded-r gap-0.5">
+                                <input
+                                  type="text"
+                                  className="border-none rounded h-9 p-1 flex-grow bg-[#1d1f23]"
+                                ></input>
+                                <img
+                                  src={heroTron}
+                                  className="h-6 w-6 bg-[#1d1f23] "
+                                />
+                              </div>
                             </div>
                           </label>
                           {/* item-3-end */}
@@ -377,14 +383,16 @@ const ManualMainScreen = () => {
                                       <h4 className="opacity-40">$0.00</h4>
                                     </div>
                                     <div className="flex flex-row items-center justify-between p-1 bg-[#2f3034] rounded-lg">
-                                      <input
-                                        type="text"
-                                        className="border-none rounded h-9 w-[76%] lg:w-48 p-1 bg-[#1d1f23]"
-                                      />
-                                      <img
-                                        src={heroTron}
-                                        className="h-6 w-6 absolute right-28"
-                                      />
+                                      <div className="bg-[#1d1f23] flex flex-row items-center justify-between rounded-r gap-0.5">
+                                        <input
+                                          type="text"
+                                          className="border-none rounded h-9  lg:w-48 p-1 flex-grow bg-[#1d1f23]"
+                                        ></input>
+                                        <img
+                                          src={heroTron}
+                                          className="h-6 w-6 bg-[#1d1f23] "
+                                        />
+                                      </div>
                                       <div className="flex justify-center items-center bg-[#2f3034] flex-grow gap-3">
                                         <h5 className="text-sm">1/2</h5>
                                         <div className="h-5 w-0.5 bg-[#656565]"></div>
@@ -490,14 +498,16 @@ const ManualMainScreen = () => {
                                       <h4 className="opacity-40">$0.00</h4>
                                     </div>
                                     <div className="flex flex-row items-center justify-between p-1 bg-[#2f3034] rounded-lg">
-                                      <input
-                                        type="text"
-                                        className="border-none rounded h-9 w-48 p-1 bg-[#1d1f23] flex-grow"
-                                      />
-                                      <img
-                                        src={heroTron}
-                                        className="h-6 w-6 absolute right-3 bg-[#1d1f23]"
-                                      />
+                                      <div className="bg-[#1d1f23] flex flex-grow flex-row items-center justify-between rounded-r gap-0.5">
+                                        <input
+                                          type="text"
+                                          className="border-none rounded h-9  lg:w-48 p-1 flex-grow bg-[#1d1f23]"
+                                        ></input>
+                                        <img
+                                          src={heroTron}
+                                          className="h-6 w-6 bg-[#1d1f23] "
+                                        />
+                                      </div>
                                     </div>
                                   </label>
                                   <label className="relative flex flex-col  text-white ">
@@ -508,14 +518,16 @@ const ManualMainScreen = () => {
                                       <h4 className="opacity-40">$0.00</h4>
                                     </div>
                                     <div className="flex flex-row items-center justify-between p-1 bg-[#2f3034] rounded-lg">
-                                      <input
-                                        type="text"
-                                        className="border-none rounded h-9 w-48 p-1 bg-[#1d1f23] flex-grow"
-                                      />
-                                      <img
-                                        src={heroTron}
-                                        className="h-6 w-6 absolute right-3 bg-[#1d1f23]"
-                                      />
+                                      <div className="bg-[#1d1f23] flex flex-grow flex-row items-center justify-between rounded-r gap-0.5">
+                                        <input
+                                          type="text"
+                                          className="border-none rounded h-9  lg:w-48 p-1 flex-grow bg-[#1d1f23]"
+                                        ></input>
+                                        <img
+                                          src={heroTron}
+                                          className="h-6 w-6 bg-[#1d1f23] "
+                                        />
+                                      </div>
                                     </div>
                                   </label>
                                   <label className="relative flex flex-col  text-white ">
@@ -526,14 +538,16 @@ const ManualMainScreen = () => {
                                       <h4 className="opacity-40">$0.00</h4>
                                     </div>
                                     <div className="flex flex-row items-center justify-between p-1 bg-[#2f3034] rounded-lg">
-                                      <input
-                                        type="text"
-                                        className="border-none rounded h-9 w-48 p-1 bg-[#1d1f23] flex-grow"
-                                      />
-                                      <img
-                                        src={heroTron}
-                                        className="h-6 w-6 absolute right-3 bg-[#1d1f23]"
-                                      />
+                                      <div className="bg-[#1d1f23] flex flex-grow flex-row items-center justify-between rounded-r gap-0.5">
+                                        <input
+                                          type="text"
+                                          className="border-none rounded h-9  lg:w-48 p-1 flex-grow bg-[#1d1f23]"
+                                        ></input>
+                                        <img
+                                          src={heroTron}
+                                          className="h-6 w-6 bg-[#1d1f23] "
+                                        />
+                                      </div>
                                     </div>
                                   </label>
                                   <button
@@ -589,14 +603,16 @@ const ManualMainScreen = () => {
                                       <h4 className="opacity-40">$0.00</h4>
                                     </div>
                                     <div className="flex flex-row items-center justify-between p-1 bg-[#2f3034] rounded-lg">
-                                      <input
-                                        type="text"
-                                        className="border-none rounded h-9 flex-grow p-1 bg-[#1d1f23]"
-                                      />
-                                      <img
-                                        src={heroTron}
-                                        className="h-6 w-6 absolute right-3"
-                                      />
+                                      <div className="bg-[#1d1f23] flex flex-grow flex-row items-center justify-between rounded-r gap-0.5">
+                                        <input
+                                          type="text"
+                                          className="border-none rounded h-9  lg:w-48 p-1 flex-grow bg-[#1d1f23]"
+                                        ></input>
+                                        <img
+                                          src={heroTron}
+                                          className="h-6 w-6 bg-[#1d1f23] "
+                                        />
+                                      </div>
                                     </div>
                                   </label>
                                   <button
