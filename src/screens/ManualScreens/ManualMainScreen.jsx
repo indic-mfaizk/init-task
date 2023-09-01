@@ -324,7 +324,10 @@ const ManualMainScreen = () => {
                             <span className="text-xs">0.45395363</span>
                           </h1>
                         </div>
-                        <div className="flex flex-col  bg-[#1d1f23] w-full h-40 font-roboto_condensed p-1 overflow-y-scroll py-1">
+                        <div
+                          className="flex flex-col  bg-[#1d1f23] w-full h-40 font-roboto_condensed p-1 overflow-y-scroll
+                        no-scrollbar py-1"
+                        >
                           {Array(6)
                             .fill(1)
                             .map((e, i) => (
@@ -818,7 +821,7 @@ const ManualMainScreen = () => {
                   </Tab.List>
                   <Tab.Panels className="mt-2">
                     <Tab.Panel>
-                      <div className="bg-[#26272b] h-[165px] overflow-x-scroll">
+                      <div className="bg-[#26272b] h-[165px] overflow-x-scroll no-scrollbar">
                         <ul className="flex flex-col gap-2">
                           {Array(10)
                             .fill(1)
@@ -847,7 +850,7 @@ const ManualMainScreen = () => {
                       </div>
                     </Tab.Panel>
                     <Tab.Panel>
-                      <div className="overflow-scroll  h-[175px]">
+                      <div className="overflow-scroll no-scrollbar  h-[175px]">
                         <table className="table-auto w-full  overflow-scroll font-roboto_condensed text-white border-collapse rounded-t-xl text-xs sm:text-base">
                           <thead className=" bg-[#484949] font-bold sticky top-0 rounded-t-xl z-10">
                             <tr className=" border-spacing-0">
@@ -890,7 +893,7 @@ const ManualMainScreen = () => {
                       </div>
                     </Tab.Panel>
                     <Tab.Panel>
-                      <div className="overflow-scroll  h-[175px]">
+                      <div className="overflow-scroll no-scrollbar h-[175px]">
                         <table className="table-auto w-full  overflow-scroll font-roboto_condensed text-white border-collapse rounded-t-xl text-xs sm:text-base">
                           <thead className=" bg-[#484949]  font-bold sticky top-0 rounded-t-xl z-10">
                             <tr className="border-spacing-0">
