@@ -637,6 +637,16 @@ const ManualMainScreen = () => {
               {/* left-end */}
               <div className="lg:hidden flex text-white p-3 bg-[#1d1f23] mt-1">
                 <div className="lg:hidden flex flex-row items-center justify-center gap-2 flex-wrap">
+                  <div
+                    className="self-start flex flex-col justify-center items-center font-roboto_condensed font-bold
+                  order-[0]  w-full "
+                  >
+                    <h1>Total 4s</h1>
+                    <h4 className="flex items-center justify-center gap-2 text-xs">
+                      Network status{" "}
+                      <span className="h-4 w-4 rounded-full bg-green-500 block"></span>{" "}
+                    </h4>
+                  </div>
                   <div className=" flex flex-row bg-[#44454a] h-10 sm:w-48 p-2 sm:p-0 text-sm items-center justify-center gap-1 rounded-full  ">
                     <BsPersonFill size={20} className="opacity-40" />
                     <h3 className="opacity-50 text-xs">Hidden</h3>
