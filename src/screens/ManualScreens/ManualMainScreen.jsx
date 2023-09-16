@@ -717,8 +717,8 @@ const ManualMainScreen = () => {
                   <div className="w-[95%] sm:w-[70%] self-end h-full">
                     <Line options={options} data={data} />
                   </div>
-                  <div className=" w-[20%] h-[92%]  bg-[#232428] text-white hidden lg:flex flex-col justify-between relative ">
-                    <div className="flex flex-col items-end gap-2">
+                  <div className="pl-3 w-auto h-[100%]  bg-[#232428] text-white hidden lg:flex flex-col justify-end gap-20 relative ">
+                    <div className=" flex flex-col items-end gap-2">
                       <div className=" flex flex-row bg-[#44454a] h-10 w-48 text-sm items-center justify-center gap-1 rounded-full  ">
                         <BsPersonFill size={20} className="opacity-40" />
                         <h3 className="opacity-50 text-xs">Hidden</h3>
@@ -750,7 +750,7 @@ const ManualMainScreen = () => {
                         <h5>287,524525</h5>
                       </div>
                     </div>
-                    <div className="absolute bottom-[-20px] right-5 flex flex-col justify-center items-end font-roboto_condensed font-bold">
+                    <div className="self-start flex flex-col justify-center items-end font-roboto_condensed font-bold">
                       <h1>Total 4s</h1>
                       <h4 className="flex items-center justify-center gap-2 text-xs">
                         Network status{" "}
