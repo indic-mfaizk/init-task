@@ -236,7 +236,7 @@ const ManualMainScreen = () => {
                               <h4 className="opacity-40">$0.00</h4>
                             </div>
                             <div className="flex flex-row items-center justify-between p-1 bg-[#2f3034] rounded-lg">
-                              <div className="bg-[#1d1f23] flex flex-row items-center justify-between rounded-r gap-0.5">
+                              <div className="bg-[#1d1f23] flex flex-row items-center justify-between rounded-r gap-0.5 ">
                                 <input
                                   type="text"
                                   className="border-none rounded h-9  lg:w-48 p-1 flex-grow bg-[#1d1f23]"
@@ -671,7 +671,7 @@ const ManualMainScreen = () => {
               </div>
               {/* right-start */}
               <div className="bg-[#232428] h-[400px] lg:h-auto flex-grow relative flex flex-col justify-between ">
-                <div className="h-[9%] sm:h-[12%] lg:h-[8%] w-full bg-[#232428] flex items-center justify-center flex-wrap sm:flex-nowrap text-white font-roboto_condensed gap-2 sm:gap-3 pt-4 sm:pt-0">
+                <div className="h-[9%] sm:h-[12%] lg:h-[8%] w-full bg-[#232428] flex items-center justify-end flex-wrap sm:flex-nowrap text-white font-roboto_condensed gap-2 sm:gap-3 pt-4 sm:pt-0">
                   <button
                     type="button"
                     className="bg-[#2f3034] w-12 h-6 text-xs sm:w-16  sm:h-8 flex justify-center items-center rounded-full sm:text-sm font-bold"
@@ -713,11 +713,11 @@ const ManualMainScreen = () => {
                   </button>
                 </div>
 
-                <div className=" h-[80%] w-[100%] p-3 flex flex-row justify-start">
+                <div className=" h-[80%] w-[100%] p-3 flex flex-row justify-between">
                   <div className="w-[95%] sm:w-[70%] self-end h-full">
                     <Line options={options} data={data} />
                   </div>
-                  <div className=" w-auto h-[92%]  bg-[#232428] text-white hidden lg:flex flex-col justify-between relative ">
+                  <div className=" w-[20%] h-[92%]  bg-[#232428] text-white hidden lg:flex flex-col justify-between relative ">
                     <div className="flex flex-col items-end gap-2">
                       <div className=" flex flex-row bg-[#44454a] h-10 w-48 text-sm items-center justify-center gap-1 rounded-full  ">
                         <BsPersonFill size={20} className="opacity-40" />
